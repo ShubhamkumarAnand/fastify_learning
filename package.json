@@ -1,6 +1,9 @@
 {
-  "dependencies": {
-    "@types/node": "^18.11.9",
-    "fastify": "^4.10.0"
-  }
+	"scripts": {
+		"dev": "tsc server.ts && nodemon dist/server.js"
+	},
+	"dependencies": {
+		"@types/node": "^18.11.9",
+		"fastify": "^4.10.0"
+	}
 }
