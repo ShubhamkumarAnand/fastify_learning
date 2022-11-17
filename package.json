@@ -1,4 +1,6 @@
 {
+	"name": "fastify",
+	"private": true,
 	"scripts": {
 		"dev": "tsc src/server.ts && nodemon server.js"
 	},
