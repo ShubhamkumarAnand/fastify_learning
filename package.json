@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"dev": "tsc server.ts && nodemon dist/server.js"
+		"dev": "tsc src/server.ts && nodemon server.js"
 	},
 	"dependencies": {
 		"@types/node": "^18.11.9",
