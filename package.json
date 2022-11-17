@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/node": "^18.11.9",
+    "fastify": "^4.10.0"
+  }
+}
