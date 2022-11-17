@@ -2,7 +2,7 @@
 	"name": "fastify",
 	"private": true,
 	"scripts": {
-		"dev": "tsc src/server.ts && nodemon server.js"
+		"dev": "nodemon src/server.js"
 	},
 	"dependencies": {
 		"@types/node": "^18.11.9",
