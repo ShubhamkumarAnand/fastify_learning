@@ -1,12 +1,20 @@
 import Fastify from 'fastify'
- 
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
+import users from './users.json'
+
+const fastify = Fastify({
+  logger: true
 })
+ 
+fastify.get('/getUsers', (request, reply) => {
+  return users;
+})
+
+const PORT = process.env.PORT || 8000
 
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 })
+    await fastify.listen(PORT)
+    console.log(`Currently Running on Port: ${PORT}`)
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
