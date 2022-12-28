@@ -1,11 +1,21 @@
 import Fastify from 'fastify'
+import Ajv from 'ajv'
 import handler from './routers.js'
+
+const ajv = new Ajv({
+  removeAdditional: true,
+  coerceTypes: false
+})
 
 const fastify = Fastify({
   logger: true
 })
 
-fastify.register(handler , {
+fastify.setValidatorCompiler(({ schema, method, url, httpPart }) => {
+  return ajv.compile(schema)
+})
+
+fastify.register(handler, {
   prefix: '/api'
 })
 
