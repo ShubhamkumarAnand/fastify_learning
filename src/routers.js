@@ -1,26 +1,5 @@
 import users from './users.json' assert {type: 'json'}
 
-const addUserOptions = {
-  schema: {
-    body: {
-      type: 'object',
-      properties: {
-        name: {
-          type: 'string',
-        },
-        gender: {
-          type: 'string',
-          enum: ['Male','Female','Other']
-        },
-        email: {
-          type: 'string'
-        }
-      },
-      required: ['name','email','gender']
-    }
-  }
-}
-
 const handler = (fastify, opts, done) => {
   fastify.get('/getUsers', async (request, reply) => {
     const { gender } = await request.query
@@ -37,7 +16,7 @@ const handler = (fastify, opts, done) => {
     }))
   })
 
-  fastify.post('/addUser',addUserOptions, async (request, res) => {
+  fastify.post('/addUser', async (request, res) => {
     const id = users.length + 1
     const newUser = await { ...request.body, id }
     users.push(newUser)
