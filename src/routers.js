@@ -16,6 +16,13 @@ const handler = (fastify, opts, done) => {
     }))
   })
 
+  fastify.post('/addUser', async (request, res) => {
+    const id = users.length + 1
+    const newUser = await { ...request.body, id }
+    users.push(newUser)
+    return newUser
+  })
+
   done()
 }
 

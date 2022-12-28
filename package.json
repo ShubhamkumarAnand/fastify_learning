@@ -1,5 +1,5 @@
 {
-  "type": "module",
+	"type": "module",
 	"name": "fastify",
 	"private": true,
 	"scripts": {
