@@ -3,7 +3,7 @@ import Ajv from 'ajv'
 import handler from './routers.js'
 
 const ajv = new Ajv({
-  removeAdditional: true,
+  removeAdditional: 'all', // remove additional properties from the schema send on POST method
   coerceTypes: false
 })
 

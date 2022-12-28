@@ -14,6 +14,9 @@ const addUserOptions = {
         },
         email: {
           type: 'string'
+        },
+        country: {
+          type: 'string'
         }
       },
       required: ['name','email','gender']
